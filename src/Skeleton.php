@@ -47,23 +47,23 @@ class Skeleton implements Driver
         // $html = $this->remember($identifier, now()->addDay(), fn () => $this->scrape($this->url($identifier)));
         // $crawler = $this->crawl($html);
 
-        return new Product([
-            'identifier' => $identifier,
-            'sku' => $identifier,
-            'name' => 'Party Rings',
-            'description' => 'Rings for the party...',
-            'url' => $this->url($identifier),
-            'price' => $price = new Price(amount: 0.10, currency: Currency::USD),
-            'status' => Status::Available,
-            'brand' => new Brand(identifier: 'Good Brand', name: 'Good Brand'),
-            'unitAmount' => $unitAmount = UnitAmount::parse('10kg'),
-            'unitPrice' => UnitPrice::determine(price: $price, unitAmount: $unitAmount),
-            'ingredients' => 'Partieeessss...',
-            'images' => [],
-            'raw' => [
+        return new Product(
+            identifier: $identifier,
+            sku: $identifier,
+            name: 'Party Rings',
+            description: 'Rings for the party...',
+            url: $this->url($identifier),
+            price: $price = new Price(amount: 0.10, currency: Currency::USD),
+            status: Status::Available,
+            brand: new Brand(identifier: 'Good Brand', name: 'Good Brand'),
+            unitAmount: $unitAmount = UnitAmount::parse('10kg'),
+            unitPrice: UnitPrice::determine(price: $price, unitAmount: $unitAmount),
+            ingredients: 'Partieeessss...',
+            images: [],
+            raw: [
                 'html' => '', // ...
             ],
-        ]);
+        );
     }
 
     public function url(string $identifier): string
