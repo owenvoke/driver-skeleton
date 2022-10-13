@@ -7,7 +7,7 @@ use ProductTrap\DTOs\Product;
 use ProductTrap\Enums\Status;
 use ProductTrap\Facades\ProductTrap as FacadesProductTrap;
 use ProductTrap\ProductTrap;
-use ProductTrap\skeleton\Skeleton;
+use ProductTrap\Skeleton\Skeleton;
 use ProductTrap\Spider;
 
 function getMockSkeleton($app, string $response): void
